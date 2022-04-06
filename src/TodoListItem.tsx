@@ -1,25 +1,18 @@
-import React from "react";
-import "./TodoListItem.css";
+import React from 'react';
 
 interface TodoListItemProps {
-  todo: Todo;
-  toggleComplete: ToggleComplete;
+	todo: Todo;
 }
-
-export const TodoListItem: React.FC<TodoListItemProps> = ({
-  todo,
-  toggleComplete
-}) => {
-  return (
-    <li>
-      <label className={todo.complete ? "complete" : undefined}>
-        <input
-          type="checkbox"
-          onChange={() => toggleComplete(todo)}
-          checked={todo.complete}
-        />
-        {todo.text}
-      </label>
-    </li>
-  );
+const test = () => {
+	console.log('test');
 };
+export function TodoListItem({ todo }: { todo: TodoListItemProps }) {
+	return (
+		<li>
+			<label>
+				<input type="checkbox" checked={todo.complete} />
+				{todo.text}
+			</label>
+		</li>
+	);
+}
